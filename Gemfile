@@ -8,26 +8,15 @@ gem 'libnotify'
 
 gem 'sqlite3'
 
- group :development, :test do
-   gem 'rspec-rails',  '2.6.1'
-  end
-
- group  :test do
-   gem 'rspec-rails',  '2.6.1'
-   gem 'webrat', '0.7.1'
-  end
-
-
-
-
-
-
-
-
-
- group :development, :test do
+ group :development  do
    gem 'rspec-rails'
    gem 'guard'
    gem 'guard-rspec'
    gem 'spork'
- end
+  end
+
+ group  :test do
+   gem 'rspec-rails'
+   gem 'webrat', '0.7.1'
+  end
+

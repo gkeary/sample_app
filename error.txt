@@ -1,0 +1,16 @@
+You cannot specify the same gem twice with different version requirements. You specified: rspec-rails (= 2.6.1) and rspec-rails (>= 0)
+
+modified Gemfile
+did bundle install  (i think)
+ran rspec spec/   and it failed saying:  
+    you already specified rspec-core 2.7.0  or some-such 
+    you can solve by running 'bundle exec'
+  so i ran:
+     bundle exec rspec spec/
+  and rspec reported:  '5 examples, 0 failures, 3 pending...
+
+  next i tried doing a 'bundle install 1st 
+     and ran:  rspec spec/
+       it still threw...
+  so I have to use bundle exec rspec spec/
+  
