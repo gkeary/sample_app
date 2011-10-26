@@ -1,5 +1,5 @@
 require 'spec_helper'
-puts "HEY!"
+
 
 describe PagesController do
 

@@ -12,11 +12,11 @@ gem 'sqlite3'
    gem 'rspec-rails'
    gem 'guard'
    gem 'guard-rspec'
-   gem 'spork'
   end
 
  group  :test do
    gem 'rspec-rails'
    gem 'webrat', '0.7.1'
+   gem 'spork'
   end
 
