@@ -1,3 +1,4 @@
+# 2nd iteration: added annotate gem
 # Ruby on Rails Tutorial: sample application
 
 This is the sample application for
