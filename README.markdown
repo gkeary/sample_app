@@ -10,7 +10,9 @@ git push heroku
  2132  heroku rename blooming-lightning
  2133  git remote -v
 
-Note:  I did not do the steps listed in Ch3 Conclusion i.e. the HELP PAGE and friends.
+Note:  I did not do the exercises in Ch3 i.e. the HELP PAGE and friends.  
+The help page may be in a previous commit.
+
 
 # 2nd iteration: added annotate gem
 # Ruby on Rails Tutorial: sample application
