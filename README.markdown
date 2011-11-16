@@ -1,3 +1,14 @@
+# HTML colors info
+
+   HTML colors can be coded with three base-16 (hexadecimal) numbers, 
+     one each for the primary colors red, green, and blue. 
+       #fff maxes out all three colors, 
+          yielding pure white. 
+          See this HTML colors site for more information. ↑ 
+          [* HTML colors *](http://www.w3schools.com/html/html_colors.asp)
+
+# Ch4 has its own git branch
+
 # 2nd time going thru Chapter 3
 
  Built this again and pushed it to [* Heroku*](http://blooming-lightning.heroku.com)
