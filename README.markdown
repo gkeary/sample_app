@@ -1,3 +1,7 @@
+# User signup:  1st step
+
+  remember:  use bundle exec rspec spec to run all tests
+
 # HTML colors info
 
    HTML colors can be coded with three base-16 (hexadecimal) numbers, 
