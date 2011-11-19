@@ -1,3 +1,7 @@
+# Heroku link 
+ Currently at end of Ch5 and pushed to 
+ [* Heroku*](http://blooming-lightning.heroku.com)
+   
 # User signup:  1st step
 
   remember:  use bundle exec rspec spec to run all tests
