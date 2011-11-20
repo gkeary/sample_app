@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20111120141547
+# Schema version: 20111120152542
 #
 # Table name: users
 #
@@ -9,6 +9,7 @@
 #  created_at         :datetime
 #  updated_at         :datetime
 #  encrypted_password :string(255)
+#  salt               :string(255)
 #
 
 
@@ -103,6 +104,37 @@ describe User do
 
     it "should set the encrypted password" do
       @user.encrypted_password.should_not be_blank
+    end
+  end
+
+  describe "has_password? method" do
+      before(:each) do
+        @user = User.create!(@attr)
+      end
+
+      it "should be true if the passwords match" do
+        @user.has_password?(@attr[:password]).should be_true
+      end
+
+      it "should be false if the passwords don't match" do
+        @user.has_password?("invalid").should be_false
+      end
+   end
+
+  describe "authenticate method" do
+    it "should return nil on email/password mismatch" do
+      wrong_password_user = User.authenticate(@attr[:email],"wrongpass")
+      wrong_password_user.should be_nil
+    end
+
+    it "should return nil for an email_address with no user" do
+      nonexistant_user = User.authenticate("bar@foo.com", @attr[:password])
+      nonexistant_user.should be_nil
+    end
+
+    it "should return the user on email/password match" do
+      matching_user = User.authenticate(@attr[:email], @attr[:password])
+      matching_user.should == @user
     end
   end
 end
