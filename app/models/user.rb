@@ -38,13 +38,54 @@ class User < ActiveRecord::Base
     encrypted_password == encrypt(submitted_password)
   end
 
-  def self.authenticate(email, submitted_password)
-    user= find_by_email(email)
-    return nil if user.nil?
-    return user if user.has_password?(submitted_password)
-  end
+#def self.authenticate(email, submitted_password)
+#    user= find_by_email(email)
+#    return nil if user.nil?
+#    return user if user.has_password?(submitted_password)
+#  end
 
+#def User.authenticate(email, submitted_password)
+#  user= find_by_email(email)
+#  return nil if user.nil?
+#  return user if user.has_password?(submitted_password)
+#end
 
+# explicit 3rd return
+#def self.authenticate(email,submitted_password)
+#  user= find_by_email(email)
+#  return nil if user.nil?
+#  return user if user.has_password?(subbmitted_password)
+#  return nil
+#end
+
+# using an if statement
+#
+#def self.authenticate(email, submitted_password)
+#  user= find_by_email(email)
+#  if user.nil?
+#    nil
+#  elsif user.has_password?(submitted_password)
+#    user
+#  else
+#    nil
+#  end
+#end
+  
+# if statement and an implicit return
+#def self.authenticate(email, submitted_password)
+#  user= find_by_email(email)
+#  if user.nil?
+#    nil
+#  elsif user.has_password?(submitted_password)
+#    user
+#  end
+#end
+# ternary operator
+def self.authenticate(email,submitted_password)
+  user= find_by_email(email)
+  user && user.has_password?(submitted_password) ? user : nil
+end
+  
 # Note the machinery:  The 'gears' about password encryption live
 #   in the private methods below. This keeps prying eyes away.  But the 
 #    tests won't run.  So we make the public method above (has_password?)
