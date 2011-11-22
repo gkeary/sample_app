@@ -45,11 +45,6 @@ describe UsersController do
       response.should have_selector("title", content: "Sign up")
     end
   end
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> signing-up
 
   describe "Get'new'" do
     
@@ -113,9 +108,5 @@ describe UsersController do
       end
     end
   end
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> signing-up
 end
 
