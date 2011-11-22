@@ -70,7 +70,8 @@ describe UsersController do
 
 #  for some reason, this complains about
 #  # a nil ????
-#        lambda  do
+#      it "should make a new user" do
+#        lambda do
 #          post :create, :user => @attr
 #        end.should change(User.count).by(1)
 #      end
