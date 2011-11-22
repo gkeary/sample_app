@@ -3,7 +3,7 @@ require 'spec_helper'
 describe UsersController do
   render_views
 
-  describe "GET 'show" do
+  describe "GET :show" do
     before(:each) do
       @user= Factory(:user)
     end
@@ -34,19 +34,22 @@ describe UsersController do
     end
   end
 
-  describe "GET 'new'" do
+  describe "GET :new" do
     it "should be successful" do
-      get 'new'
+      get :new
       response.should be_success
     end
 
     it "should have the right title" do
-      get 'new'
+      get :new
       response.should have_selector("title", content: "Sign up")
     end
   end
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> signing-up
 
   describe "Get'new'" do
     
@@ -110,5 +113,9 @@ describe UsersController do
       end
     end
   end
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> signing-up
 end
+

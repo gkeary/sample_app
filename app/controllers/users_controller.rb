@@ -6,11 +6,10 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
     @title = "Sign up"
   end
 
-<<<<<<< Updated upstream
-=======
   def create
     @user= User.new(params[:user])
     if @user.save
@@ -21,6 +20,4 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-  
->>>>>>> Stashed changes
 end
