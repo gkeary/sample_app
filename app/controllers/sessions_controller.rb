@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
        @title = "Sign in"
        render 'new'
     else
+       render 'new'
       #Sign the user in and redirect to the user's show page.
     end
   end
