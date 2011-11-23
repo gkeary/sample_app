@@ -1,3 +1,30 @@
+# Integration tests: signin/signout
+
+ As a capstone to our hard work on authentication, 
+ we’ll finish with integration tests 
+ for signin and signout 
+ (placed in the users_spec.rb file for convenience).
+ 
+ RSpec integration testing is 
+ expressive enough that 
+ Listing 9.30 
+ should need little explanation; 
+ I especially like the use of 
+ click_link "Sign out", 
+    which not only simulates a 
+    browser clicking the signout link, 
+    but also raises an error 
+    if no such link exists
+      —thereby testing the URL, 
+      the named route, 
+      the link text, 
+      and the changing of the 
+      layout links, all in one line. 
+      
+If that’s not an integration test, 
+   I don’t know what is.
+
+
 # Heroku link 
  Currently at end of Ch5 and pushed to 
  [* Heroku*](http://blooming-lightning.heroku.com)
