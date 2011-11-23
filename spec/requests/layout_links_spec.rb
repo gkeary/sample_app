@@ -25,5 +25,13 @@ describe "LayoutLinks" do
     get '/signup'
     response.should have_selector('title', content: "Sign up")
   end
+
+  describe "when not signed in" do
+    it "should have a sign in link" do
+      visit root_path
+      response.should have_selector("a", href: signin_path,
+                                         content: "Sign in")
+    end
+  end
 end 
 
