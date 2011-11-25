@@ -26,6 +26,21 @@ describe "LayoutLinks" do
     response.should have_selector('title', content: "Sign up")
   end
 
+  it "should have several specific paths" do
+      #puts "TEST_PATH: #{user_path(@user)}"
+    root_path.should == '/'
+    signup_path == '/signup'
+    signin_path.should == '/signin'
+    signout_path.should == '/signout'
+
+  # DEBUG:  this not working, figure it out
+#        Failure/Error: user_path(@user).should == '/user'
+#     ActionController::RoutingError:
+#       No route matches {:action=>"show", :controller=>"users"}
+#     puts "TEST_PATH: #{user_path(@user)}"
+#    user_path(@user).should == '/user'
+  end
+
   describe "when not signed in" do
     it "should have a sign in link" do
       visit root_path

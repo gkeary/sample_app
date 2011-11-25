@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Users" do
+describe "Users(INTEGRATION TEST)" do
   describe "signup" do
     describe "failure" do
       it "should not make a new user" do
@@ -38,22 +38,22 @@ describe "Users" do
     describe "failure" do
       it "should not sign a user in" do
          integration_signin(User.new( email: "", password:""))
-
-#         fill_in :email,    with: ""
-#         fill_in :password, with: ""
-#         click_button
+         fill_in :email,    with: ""
+         fill_in :password, with: ""
+         click_button
+         #puts "EMPTYCLICK: #{flash[:error]}"         
          response.should have_selector("div.flash.error", content: "Invalid")
       end
     end
 
      describe "success" do
        it "should sign a user in and out" do
-         integration_signin(Factory(:user))
-
-#         visit signin_path
-#         fill_in :email,    with: user.email
-#         fill_in :password, with: user.password
-#         click_button
+         user = Factory(:user)
+          #puts "WhoIsThis: #{user.name}/#{user.password}"
+         visit signin_path
+         fill_in :email,    with: user.email
+         fill_in :password, with: user.password
+         click_button
          controller.should be_signed_in
          click_link "Sign out"
          controller.should_not be_signed_in
