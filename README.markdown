@@ -1,3 +1,16 @@
+# branch updating-users1
+#
+
+this branch recovers from several errors.
+Note that you can place puts statements in the spec files 
+and examine stuff on the fly.
+
+Now the app will sign in and sign out and there are 66 examples in the spec.
+
+Technical debt:  look into a means for DRYing up the spec file(s) around:
+  should be successful
+  title should be:  'foo'
+
 # Integration tests: signin/signout
 
  As a capstone to our hard work on authentication, 

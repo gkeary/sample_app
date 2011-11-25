@@ -4,6 +4,17 @@ describe PagesController do
 
   render_views
 
+  boilerplate =  "Ruby on Rails Tutorial Sample App "
+  aa = {desc: 'home', desc: 'contact', desc: 'about'}
+  its = {text: "should be successful", text: "should have the right title"}
+  contents = {title: boilerplate + "| Home", 
+             title: boilerplate + "| Contact",
+             title: boilerplate + "| About"}
+
+  vars = [aa, its, contents]
+  
+  
+
   describe "GET 'home'" do
     it "should be successful" do
       get 'home'
