@@ -5,6 +5,7 @@ describe PagesController do
   render_views
 
   boilerplate =  "Ruby on Rails Tutorial Sample App "
+  pages= qw[home contact about]
   aa = {desc: 'home', desc: 'contact', desc: 'about'}
   its = {text: "should be successful", text: "should have the right title"}
   contents = {title: boilerplate + "| Home", 
