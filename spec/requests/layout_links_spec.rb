@@ -29,6 +29,7 @@ describe "LayoutLinks" do
   it "should have several specific paths" do
       #puts "TEST_PATH: #{user_path(@user)}"
     root_path.should == '/'
+    help_path.should == '/help'
     signup_path == '/signup'
     signin_path.should == '/signin'
     signout_path.should == '/signout'
