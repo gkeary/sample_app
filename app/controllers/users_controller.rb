@@ -44,6 +44,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success]= "User destroyed"
+    redirect_to users_path
+  end
+
   private
 
     def authenicate
@@ -56,7 +62,9 @@ class UsersController < ApplicationController
     end
 
     def admin_user
-      redirect_to(root_path) unless current_user.admin
+#puts "CURRENT_USER: #{current_user.inspect}" 
+      redirect_to(root_path) unless current_user.admin?
+
     end
 
 end
