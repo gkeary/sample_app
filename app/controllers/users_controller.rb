@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenicate, only: [:index,:edit, :update]
+  before_filter :authenticate, only: [:index,:edit, :update]
   before_filter :correct_user, only: [:edit, :update]
 
   def index
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 
   private
 
-    def authenicate
+    def authenticate
       deny_access unless signed_in?
     end
 
