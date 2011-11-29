@@ -278,6 +278,7 @@ describe UsersController do
     describe "as a non-signed-in-user" do
 #      it "should deny access" do
 #        signout
+# this not working...
 #        delete :destroy, id: @user
 #        response.should redirect_to(signin_path)
 #      end
