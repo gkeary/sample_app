@@ -156,16 +156,6 @@ describe User do
       @user.should be_admin
     end
   end
-
-  describe "micropost associations" do
-    before(:each) do
-      @user = User.create(@attr)
-    end
-
-    it "should have a microposts attribute" do
-      @user.should respond_to(:microposts)
-    end
-
 #
 #Method	                      Purpose
 #micropost.user             	Return the User object associated with the micropost.
@@ -174,5 +164,20 @@ describe User do
 #user.microposts.create!(arg)	Create a micropost (exception on failure).
 #user.microposts.build(arg)	  Return a new Micropost object (user_id = user.id).
 #
+
+  describe "micropost associations (for User)" do
+    before(:each) do
+      @user = User.create(@attr)
+      @mp1= Factory(:micropost, user: @user, created_at: 1.day.ago)
+      @mp1= Factory(:micropost, user: @user, created_at: 1.day.ago)
+    end
+
+    it "should have a microposts attribute" do
+      @user.should respond_to(:microposts)
+    end
+
+    it "should have the right microposts in the right order" do
+      @user.microposts.should == [@mp2, @mp1]
+    end
   end
 end
