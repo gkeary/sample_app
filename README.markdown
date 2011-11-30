@@ -1,3 +1,11 @@
+# branch user-microposts
+#
+  This branch had several errors until I found
+  a faulty user of params hash
+
+  it should be params[:micropost]  vice params(:micropost)
+
+
 # branch updating-users1
 #
 
