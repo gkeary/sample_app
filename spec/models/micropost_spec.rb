@@ -24,16 +24,18 @@ describe Micropost do
 
   describe "user associations" do
     before(:each) do
-      @micropost = @user.microposts.create(@attr)
+      @posting = @user.microposts.create(@attr)
     end
 
     it "should have a user attribute" do
-      @micropost.should respond_to(:user)
+       # Prints Michael Hartl  "value for content"
+       #puts @posting.user.name, @posting.content
+      @posting.should respond_to(:user)
     end
 
     it "should have the right associated user" do
-      micropost.user_id.should == @user.id
-      micropost.user.should == @user
+      @posting.user_id.should == @user.id
+      @posting.user.should == @user
     end
   end
 end

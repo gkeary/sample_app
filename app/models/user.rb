@@ -16,6 +16,16 @@ require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
+  
+  has_many :microposts
+
+#Method	                        Purpose
+#micropost.user                  Return the User object associated with the micropost.
+#user.microposts                 Return an array of the user’s microposts.
+#user.microposts.create(arg)     Create a micropost (user_id = user.id).
+#user.microposts.create!(arg)    Create a micropost (exception on failure).
+#user.microposts.build(arg)      Return a new Micropost object (user_id = user.id).
+#
 
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

@@ -26,7 +26,7 @@ describe User do
   end
 
   it "should create a new instance when given valid attributes" do
-    User.create!(@attr) # create bang throws when it fails
+    User.create!(@attr) # create! throws when it fails
   end
 
   it "should require a name" do
@@ -155,5 +155,24 @@ describe User do
       @user.toggle!(:admin)
       @user.should be_admin
     end
+  end
+
+  describe "micropost associations" do
+    before(:each) do
+      @user = User.create(@attr)
+    end
+
+    it "should have a microposts attribute" do
+      @user.should respond_to(:microposts)
+    end
+
+#
+#Method	                      Purpose
+#micropost.user             	Return the User object associated with the micropost.
+#user.microposts            	Return an array of the user’s microposts.
+#user.microposts.create(arg )	Create a micropost (user_id = user.id).
+#user.microposts.create!(arg)	Create a micropost (exception on failure).
+#user.microposts.build(arg)	  Return a new Micropost object (user_id = user.id).
+#
   end
 end
