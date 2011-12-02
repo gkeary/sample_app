@@ -82,8 +82,8 @@ end
   
 def feed
   # This WAS preliminary. See Ch12 for the full implementation.
-  #Micropost.where("user_id = ?", id)
-  Micropost.from_users_followed_by(self)
+#Micropost.where("user_id = ?", id)
+   Micropost.from_users_followed_by(self)
 end
 
 private
