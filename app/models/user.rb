@@ -81,8 +81,9 @@ def unfollow!(followed)
 end
   
 def feed
-  # This is preliminary. See Ch12 for the full implementation.
-  Micropost.where("user_id = ?", id)
+  # This WAS preliminary. See Ch12 for the full implementation.
+  #Micropost.where("user_id = ?", id)
+  Micropost.from_users_followed_by(self)
 end
 
 private
