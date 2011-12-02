@@ -1,3 +1,8 @@
+# Table 12.1
+HTTP request	URL	Action	                Named route
+GET	         /users/1/following	following	following_user_path(1)
+GET	         /users/1/followers	followers	followers_user_path(1)
+
 # branch user-microposts
 #
   This branch had several errors until I found
